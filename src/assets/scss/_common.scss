@@ -1,0 +1,19 @@
+.btn {
+  background-color: lighten($main_color, 10);
+  color: white;
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  width: 120px;
+  margin: auto;
+
+  @include mq-pc {
+    transition: 0.3s;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
