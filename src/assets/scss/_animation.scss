@@ -1,0 +1,13 @@
+// ページ遷移時のアニメーション
+.router-transition-enter-active {
+  transition: all .3s ease .3s;
+}
+.router-transition-leave-active {
+  position: absolute;
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.router-transition-enter,
+.router-transition-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      <img class="sub-logo" src="./assets/logo.png">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </div>
@@ -14,31 +15,16 @@
 
 
 <style lang="scss">
-$main_color: #203143;
-$sidebar_size: 300px;
+@import "./assets/scss/_variables.scss";
+@import "./assets/scss/_mixin.scss";
+@import "./assets/scss/_base.scss";
+@import "./assets/scss/_animation.scss";
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
 #app {
   width: 100%;
   height: 100%;
-}
-
-body {
-  border-top: 10px solid $main_color;
-}
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
   display: flex;
+  border-top: 10px solid $main_color;
 }
 
 #nav {
@@ -47,6 +33,18 @@ body {
   padding: 30px;
   background-color: $main_color;
   color: white;
+  transition: 0.3s;
+  transform: translateX(0);
+
+  @include mq-mb {
+    position: absolute;
+    transform: translateX(-150%);
+  }
+
+  .sub-logo {
+    width: 50px;
+    margin: 50px auto;
+  }
 
   a {
     font-weight: bold;
@@ -65,18 +63,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: relative;
+  margin: 0 30px;
 
-.router-transition-enter-active {
-  transition: all .3s ease .3s;
-}
-.router-transition-leave-active {
-  position: absolute;
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.router-transition-enter,
-.router-transition-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
+  @include mq-mb {
+    margin: 0 15px;
+  }
 }
 </style>
