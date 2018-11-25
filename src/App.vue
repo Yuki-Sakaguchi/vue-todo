@@ -152,6 +152,7 @@
   align-items: center;
   position: relative;
   margin: 0 30px;
+  transition: 0.3s;
 
   @include mq-mb {
     margin: 0 15px;
